@@ -7,7 +7,8 @@
 <template>
     <main>
         <Authenticator>
-            <template v-slot="{ signOut }">
+            <template v-slot="{ user, signOut }">
+                <h1>Hello {{ user?.signInDetails?.loginId }}! Your TODOs:</h1>
                 <Todos />
                 <button @click="signOut">Sign Out</button>
             </template>
